@@ -210,14 +210,14 @@ class Response{
 	 */
 	public function sendContent(){
 		if($content = $this->getContent()){
-		    if (is_resource($content)) {
-	            while (! feof($content)) {
-	                echo fread($content, 8192);
-	            }
-	            fclose($content);
-	        } else {
-	            echo $content;
-	        }
+			if (is_resource($content)) {
+				while (! feof($content)) {
+					echo fread($content, 8192);
+				}
+				fclose($content);
+			} else {
+				echo $content;
+			}
 		}
 	}
 }
